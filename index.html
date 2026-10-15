@@ -7818,7 +7818,7 @@ void main() {
     function apply() { gow.style.transform = 'translate3d(' + bx + 'px,' + by + 'px,0)' + (tilt ? ' rotate(' + tilt.toFixed(1) + 'deg)' : ''); }
     function showFinal() {
       fin.hidden = false; phase = 'final';
-      tired = true;                // при «уменьшить анимацию» кнопка не убегает
+      if (!RM) arm(); else tired = true;                // при «уменьшить анимацию» кнопка не убегает
       goBtn.animate([{ opacity: 0 }, { opacity: 1 }], { duration: RM ? 300 : 800, easing: 'ease-out' });
     }
     function arm() {
